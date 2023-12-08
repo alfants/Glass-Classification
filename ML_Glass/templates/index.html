@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glass DT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <h1>Glass Dataset Pediction</h1>
+
+        <!-- Main Input For Receiving Query To Our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+          <input type="text" name="RI" placeholder="RI" required="required" />
+
+          <input type="text" name="Na" placeholder="Na" required="required" />
+
+          <input type="text" name="Mg" placeholder="Mg" required="required" />
+
+          <input type="text" name="Al" placeholder="Al" required="required" />
+
+          <input type="text" name="Si" placeholder="Si" required="required" />
+
+          <input type="text" name="K" placeholder="K" required="required" />
+
+          <input type="text" name="Ca" placeholder="Ca" required="required" />
+
+          <input type="text" name="Ba" placeholder="Ba" required="required" />
+
+          <input type="text" name="Fe" placeholder="Fe" required="required" />
+
+          <button type="submit">Predict</button>
+        </form>
+        <br />
+        <div class="pred">{{ prediction_text }}</div>
+        <p>
+          Link
+          <a href="http://www.kaggle.com/datasets/uciml/glass" target="_blank"
+            >Dataset Glass</a
+          >
+        </p>
+      </div>
+      <ul>
+        <li>RI: Refractive Index</li>
+        <li>Na: Sodium</li>
+        <li>Mg: Magnesium</li>
+        <li>Al: Aluminum</li>
+        <li>Si: Silicon</li>
+        <li>K: Potassium</li>
+        <li>Ca: Calcium</li>
+        <li>Ba: Barium</li>
+        <li>Fe: Iron</li>
+      </ul>
+    </div>
+  </body>
+</html>
